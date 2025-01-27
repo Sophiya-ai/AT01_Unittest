@@ -12,6 +12,8 @@ from CW_arithm_ab import add, subtract, multiply, divide
 # ожидаемому значению. Мы указываем использование функции с определенными значениями и указываем,
 # какой должен быть результат; если результат не соответствует, тест не будет пройден.
 
+# Функции в классе тестирования называть с 'test_'. Это требование позволяет `unittest` обнаруживать
+# и запускать тесты автоматически
 class TestMath(unittest.TestCase):
     def test_add(self):
         self.assertEqual(add(2, 5), 7)
@@ -38,5 +40,7 @@ class TestMath(unittest.TestCase):
         self.assertRaises(TypeError, divide, 6, 0) #неверный тип ошибки
 
 
+# Эта строка проверяет, что файл запущен напрямую, и вызывается функция unittest.main,
+# которая автоматически обнаруживает и запускает все тестовые методы в классе TestMath.
 if __name__ == '__main__':
     unittest.main()
