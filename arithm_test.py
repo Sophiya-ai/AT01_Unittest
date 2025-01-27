@@ -35,6 +35,7 @@ class TestMath(unittest.TestCase):
     # функцию divide и через запятую значения для переменных
     def test_divide_by_zero(self):
         self.assertRaises(ValueError, divide, 6, 0)
+        self.assertRaises(TypeError, divide, 6, 0) #неверный тип ошибки
 
 
 if __name__ == '__main__':
